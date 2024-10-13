@@ -306,6 +306,38 @@ docker run -d --restart=on-failure:3 -p 80:80 clashcheck
 
 正常需要等待1-2分钟浏览器访问`0.0.0.0:[宿主机端口]`查看筛选结果[check.yaml] 可以右键复制链接直接使用（需要保持docker容器运行）
 
+>2024-10-13 14:57:19 /usr/bin/env: 'sh\r': No such file or directory
+
+>2024-10-13 14:57:19 /usr/bin/env: use -[v]S to pass options in shebang lines
+
+ChatGPT 说：
+这个错误通常是因为脚本文件的换行符格式不对，导致脚本中的 shebang 行无法被正确解析。
+
+具体来说，/usr/bin/env: 'sh\r': No such file or directory 表明你的脚本文件使用的是 Windows 风格的换行符（\r\n），而 Unix/Linux 系统（包括 macOS 和 Linux）使用的是 \n 作为换行符。\r 会导致 /usr/bin/env 误以为你在传递一个名为 sh\r 的命令，而不是 sh。
+
+解决方法：
+
+将你的脚本文件从 Windows 换行格式 (\r\n) 转换为 Unix 换行格式 (\n)。
+
+你可以通过以下方式进行转换：
+
+使用 dos2unix 工具（如果你在 Linux 或 macOS 上）：
+在终端中运行以下命令：
+
+bash
+复制代码
+dos2unix your_script.sh
+这将把 Windows 风格的换行符转换为 Unix 风格。
+
+使用文本编辑器转换：
+如果你在编辑器中编写脚本，可以检查并修改换行符格式。例如，在 VS Code、Sublime Text 等编辑器中，可以通过“文件”菜单选择“另存为”时选择 Unix 格式，或者直接在设置中调整换行符格式。
+
+确保你的 shebang 行正确无误，例如：
+
+bash
+#!/usr/bin/env sh
+转换换行符格式后，你的脚本应该可以在 Unix/Linux 环境下正常运行。
+
 <!-- `OSError: [Errno 24] Too many open files` -> 仅更改当前终端限制 -> `ulimit -n 4096`
 <br>永久更改此限制 -> https://stackoverflow.com/a/53661748/18250519 -->
 
