@@ -53,13 +53,13 @@ if __name__ == '__main__':
             subscribe_links = config['sub']
             subscribe_files = config['local']
         directories, total = get_file_list()
-        data = parse(directories)
+        # data = parse(directories)
         try:
             sfiles = len(subscribe_links)
-            tfiles = len(subscribe_links) + len(data[current_date])
+            tfiles = len(subscribe_links)# + len(data[current_date])
             processes=[]
             filenames = list()
-            filenames = data[current_date]
+            # filenames = data[current_date]
         except KeyError:
             print("Success: " + "find " + str(sfiles) + " Clash link")
         else:
