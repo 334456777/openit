@@ -3,21 +3,21 @@
 # Please see the documentation for all configuration options:
 # https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
 
-#version: 2
-#updates:
+version: 2
+updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "daily"
+      interval: "never"
   - package-ecosystem: "pip"
     directory: "/utils/pool"
     schedule:
-      interval: "daily"
+      interval: "never"
   - package-ecosystem: "pip"
     directory: "/utils/clashcheck"
     schedule:
-      interval: "daily"
+      interval: "never"
   - package-ecosystem: "npm"
     directory: "/utils/rm"
     schedule:
-      interval: "daily"
+      interval: "never"
