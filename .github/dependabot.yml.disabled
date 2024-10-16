@@ -8,16 +8,16 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "never"
+      interval: "daily"
   - package-ecosystem: "pip"
     directory: "/utils/pool"
     schedule:
-      interval: "never"
+      interval: "daily"
   - package-ecosystem: "pip"
     directory: "/utils/clashcheck"
     schedule:
-      interval: "never"
+      interval: "daily"
   - package-ecosystem: "npm"
     directory: "/utils/rm"
     schedule:
-      interval: "never"
+      interval: "daily"
