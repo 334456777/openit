@@ -6,5 +6,5 @@ utils/clashcheck/__pycache__/
 # ClashCheck cache & temp
 utils/clashcheck/temp/
 utils/clashcheck/cache.db
-/.idea/*
+.idea/
 /out/
