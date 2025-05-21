@@ -7,4 +7,4 @@ utils/clashcheck/__pycache__/
 utils/clashcheck/temp/
 utils/clashcheck/cache.db
 .idea/
-/out/
+out/
